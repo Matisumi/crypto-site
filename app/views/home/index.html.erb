@@ -1,0 +1,26 @@
+<div class="container" align="center">
+<h1>Pick one currency</h1>
+<br>
+
+<%= form_for :search do |f| %>
+ 
+
+  <div class="field">
+    <%= f.label :Type_your_research_here %><br />
+    <%= f.select :choice, (@currencies) %>
+  </div>
+<br>
+  <div class="actions">
+    <%= f.submit "Search" %>
+  </div>
+  <br>
+<% end %>
+
+<%unless @currency == nil %>
+<div class="alert-success" align="center" style="height: 100px; width: 300px;"> 
+<p style="padding-top: 20px;"> The current price of <%= @currency %> is :</p>
+ <p><%= @price %>$</p>
+ </div>
+<% end %>
+
+</div>
